@@ -1,0 +1,35 @@
+.stonehenge
+  position: relative
+  width: 100%
+  overflow-x: scroll
+  overflow-y: hidden
+  white-space: nowrap
+  transition: all 0.2s
+  transform: scale(0.98)
+  will-change: transform
+  user-select: none
+  cursor: pointer
+  text-align: center
+
+  &.is-grabbed
+    cursor: grabbing
+    transform: scale(1)
+
+  > *
+    display: inline-block
+    text-align: left
+    vertical-align: middle
+    margin-left: 1rem
+    margin-right: 1rem
+
+  &.zigzag
+    padding: 2rem 0
+
+    > *
+      position: relative
+
+      &:nth-child(odd)
+        top: -1.5rem
+
+      &:nth-child(even)
+        bottom: -1.5rem
