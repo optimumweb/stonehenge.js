@@ -3,8 +3,9 @@
         options = $.extend({
             speed: 1.0,
             autoscroll: false,
-            autoscrollSpeed: 25,
-            autoscrollPeriod: 250,
+            autoscrollOnce: true,
+            autoscrollSpeed: 20,
+            autoscrollPeriod: 500,
             autoscrollEasing: 'linear',
         }, options);
 
@@ -14,6 +15,7 @@
             // options
             let speed = $stonehenge.data('stonehenge-speed') || options.speed,
                 autoscroll = $stonehenge.data('stonehenge-autoscroll') || options.autoscroll,
+                autoscrollOnce = $stonehenge.data('stonehenge-autoscroll-once') || options.autoscrollOnce,
                 autoscrollSpeed = $stonehenge.data('stonehenge-autoscroll-speed') || options.autoscrollSpeed,
                 autoscrollPeriod = $stonehenge.data('stonehenge-autoscroll-period') || options.autoscrollPeriod,
                 autoscrollEasing = $stonehenge.data('stonehenge-autoscroll-easing') || options.autoscrollEasing;
@@ -49,13 +51,19 @@
             if (autoscroll) {
                 let autoscrollDelta = Math.round(autoscrollSpeed * autoscrollPeriod / 1000);
 
-                setInterval(function () {
+                let autoscrollInterval = setInterval(function () {
                     if (! isGrabbed) {
                         $stonehenge.animate({
                             scrollLeft: $stonehenge.scrollLeft() + autoscrollDelta
                         }, autoscrollPeriod, autoscrollEasing);
                     }
                 }, autoscrollPeriod);
+
+                if (autoscrollOnce) {
+                    $stonehenge.on('mousedown', function () {
+                        clearInterval(autoscrollInterval);
+                    });
+                }
             }
         });
     };
