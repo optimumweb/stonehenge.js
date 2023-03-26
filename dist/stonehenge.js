@@ -9,13 +9,17 @@
         }, options);
 
         return this.each(function () {
-            let $stonehenge = $(this),
-                speed = options.speed || $stonehenge.data('stonehenge-speed') || 1.0,
-                autoscroll = options.autoscroll || $stonehenge.data('stonehenge-autoscroll'),
-                autoscrollSpeed = options.autoscrollSpeed || $stonehenge.data('stonehenge-autoscroll-speed'),
-                autoscrollPeriod = options.autoscrollPeriod || $stonehenge.data('stonehenge-autoscroll-period'),
-                autoscrollEasing = options.autoscrollEasing || $stonehenge.data('stonehenge-autoscroll-easing'),
-                isGrabbed = false,
+            let $stonehenge = $(this);
+
+            // options
+            let speed = $stonehenge.data('stonehenge-speed') || options.speed,
+                autoscroll = $stonehenge.data('stonehenge-autoscroll') || options.autoscroll,
+                autoscrollSpeed = $stonehenge.data('stonehenge-autoscroll-speed') || options.autoscrollSpeed,
+                autoscrollPeriod = $stonehenge.data('stonehenge-autoscroll-period') || options.autoscrollPeriod,
+                autoscrollEasing = $stonehenge.data('stonehenge-autoscroll-easing') || options.autoscrollEasing;
+
+            // state
+            let isGrabbed = false,
                 initialX,
                 scrollLeft;
 
