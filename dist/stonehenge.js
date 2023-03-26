@@ -47,12 +47,12 @@
                 });
 
             if (autoscroll) {
-                let autoscrollDelta = autoscrollSpeed * autoscrollPeriod / 1000;
+                let autoscrollDelta = Math.round(autoscrollSpeed * autoscrollPeriod / 1000);
 
                 setInterval(function () {
                     if (! isGrabbed) {
                         $stonehenge.animate({
-                            scrollLeft: this.scrollLeft + autoscrollDelta
+                            scrollLeft: $stonehenge.scrollLeft() + autoscrollDelta
                         }, autoscrollPeriod, autoscrollEasing);
                     }
                 }, autoscrollPeriod);
