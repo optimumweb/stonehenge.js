@@ -61,6 +61,7 @@
 
                 if (autoscrollOnce) {
                     $stonehenge.on('mousedown touchstart', function () {
+                        $stonehenge.stop(true);
                         clearInterval(autoscrollInterval);
                     });
                 }
