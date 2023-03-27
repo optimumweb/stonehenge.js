@@ -60,7 +60,7 @@
                 }, autoscrollPeriod);
 
                 if (autoscrollOnce) {
-                    $stonehenge.on('mousedown', function () {
+                    $stonehenge.on('mousedown touchstart', function () {
                         clearInterval(autoscrollInterval);
                     });
                 }
