@@ -1,6 +1,6 @@
 {
   "name": "stonehenge.js",
-  "version": "0.1.0",
+  "version": "0.0.15g",
   "description": "Tiny jQuery plugin to display mouse/finger draggable carousel",
   "main": "stonehenge.js",
   "style": "stonehenge.css",
