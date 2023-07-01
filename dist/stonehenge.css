@@ -10,6 +10,11 @@
   user-select: none;
   cursor: pointer;
   text-align: center;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.stonehenge::-webkit-scrollbar {
+  display: none;
 }
 .stonehenge.is-grabbed {
   cursor: grabbing;
