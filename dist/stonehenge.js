@@ -4,8 +4,7 @@
             speed: 1.0,
             autoscroll: false,
             autoscrollOnce: true,
-            autoscrollSpeed: 20,
-            autoscrollPeriod: 500,
+            autoscrollSpeed: 100,
         }, options);
 
         return this.each(function () {
@@ -15,9 +14,7 @@
             let speed = $stonehenge.data('stonehenge-speed') || options.speed,
                 autoscroll = $stonehenge.data('stonehenge-autoscroll') || options.autoscroll,
                 autoscrollOnce = $stonehenge.data('stonehenge-autoscroll-once') || options.autoscrollOnce,
-                autoscrollSpeed = $stonehenge.data('stonehenge-autoscroll-speed') || options.autoscrollSpeed,
-                autoscrollPeriod = $stonehenge.data('stonehenge-autoscroll-period') || options.autoscrollPeriod,
-                autoscrollEasing = $stonehenge.data('stonehenge-autoscroll-easing') || options.autoscrollEasing;
+                autoscrollSpeed = $stonehenge.data('stonehenge-autoscroll-speed') || options.autoscrollSpeed;
 
             // state
             let isGrabbed = false,
@@ -48,13 +45,11 @@
                 });
 
             if (autoscroll) {
-                let autoscrollDelta = Math.round(autoscrollSpeed * autoscrollPeriod / 1000);
-
                 let autoscrollInterval = setInterval(function () {
                     if (! isGrabbed) {
-                        $stonehenge.scrollLeft($stonehenge.scrollLeft() + autoscrollDelta);
+                        $stonehenge.scrollLeft($stonehenge.scrollLeft() + 5);
                     }
-                }, autoscrollPeriod);
+                }, autoscrollSpeed);
 
                 if (autoscrollOnce) {
                     $stonehenge.on('mousedown touchstart', function () {
