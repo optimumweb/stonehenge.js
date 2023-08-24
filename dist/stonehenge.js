@@ -6,7 +6,6 @@
             autoscrollOnce: true,
             autoscrollSpeed: 20,
             autoscrollPeriod: 500,
-            autoscrollEasing: 'linear',
         }, options);
 
         return this.each(function () {
@@ -53,9 +52,7 @@
 
                 let autoscrollInterval = setInterval(function () {
                     if (! isGrabbed) {
-                        $stonehenge.animate({
-                            scrollLeft: $stonehenge.scrollLeft() + autoscrollDelta
-                        }, autoscrollPeriod, autoscrollEasing);
+                        $stonehenge.scrollLeft($stonehenge.scrollLeft() + autoscrollDelta);
                     }
                 }, autoscrollPeriod);
 
