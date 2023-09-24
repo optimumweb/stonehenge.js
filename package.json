@@ -7,7 +7,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:LimestoneSoftware/stonehenge.js.git"
+    "url": "git@github.com:optimumweb/stonehenge.js.git"
   },
   "keywords": [
     "jquery",
@@ -19,7 +19,7 @@
   "author": "Jonathan Roy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/LimestoneSoftware/stonehenge.js/issues"
+    "url": "https://github.com/optimumweb/stonehenge.js/issues"
   },
-  "homepage": "https://github.com/LimestoneSoftware/stonehenge.js"
+  "homepage": "https://github.com/optimumweb/stonehenge.js"
 }
